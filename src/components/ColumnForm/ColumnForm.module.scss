@@ -1,0 +1,16 @@
+.columnForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.columnForm label {
+  margin: 0 8px 0 16px;
+}
+
+@media (max-width: 767px) {
+  .columnForm {
+    flex-direction: column;
+  }
+}
