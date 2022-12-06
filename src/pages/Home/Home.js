@@ -1,15 +1,11 @@
 import Hero from '../Hero/Hero';
-import List from '../../components/List/List';
-import SearchForm from '../../components/SearchForm/SearchForm';
+import Lists from '../../components/Lists/Lists';
 
-const Home = () => {
-  return (
-    <>
-      <Hero />
-      <SearchForm />
-      <List />
-    </>
-  );
-};
+const Home = () => (
+  <>
+    <Hero />
+    <Lists />
+  </>
+);
 
 export default Home;

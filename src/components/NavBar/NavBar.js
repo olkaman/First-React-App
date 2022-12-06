@@ -1,24 +1,46 @@
 import styles from './NavBar.module.scss';
 import clsx from 'clsx';
 import Container from '../Container/Container';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <Container>
         <div className={styles.wrapper}>
-          <a href='/'>
+          <Link to='/'>
             <span className={clsx(styles.icon, ' fa fa-tasks')} />
-          </a>
+          </Link>
           <ul>
             <li>
-              <a href='/'>Home</a>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? styles.linkActive : undefined
+                }
+                to='/'
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <a href='/about'>About</a>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? styles.linkActive : undefined
+                }
+                to='/about'
+              >
+                About
+              </NavLink>
             </li>
             <li>
-              <a href='/favorite'>Favorite</a>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? styles.linkActive : undefined
+                }
+                to='/favorite'
+              >
+                Favorite
+              </NavLink>
             </li>
           </ul>
         </div>
