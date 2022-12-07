@@ -7,7 +7,7 @@ import { updateSearchString, getSearchPhrase } from '../../redux/store';
 import { useSelector } from 'react-redux';
 
 const SearchForm = () => {
-  let searchPhrase = useSelector(getSearchPhrase);
+  const searchPhrase = useSelector(getSearchPhrase);
   const [searchValue, setSearchValue] = useState('');
   const dispatch = useDispatch();
   console.log('localState', searchValue);
