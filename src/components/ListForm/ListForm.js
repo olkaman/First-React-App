@@ -13,7 +13,7 @@ const ListForm = ({ id }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addList({ id: id, title, description }));
+    dispatch(addList({ id, title, description }));
     setTitle('');
     setDescription('');
   };
