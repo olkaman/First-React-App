@@ -3,6 +3,7 @@ import { strContains } from '../utils/strContains';
 
 const ADD_CARD = 'app/lists/ADD_CARD';
 const TOGGLE_CARD_FAVORITE = 'app/lists/TOGGLE_CARD_FAVORITE';
+const REMOVE_CARD = 'app/lists/REMOVE_CARD';
 
 //selectors
 export const getFilteredCards = ({ searchPhrase, cards }, columnId) =>
@@ -19,6 +20,7 @@ export const toggleCardFavorite = (payload) => ({
   type: TOGGLE_CARD_FAVORITE,
   payload,
 });
+export const removeCard = (payload) => ({ type: REMOVE_CARD, payload });
 
 //subreducer
 const cardsReducer = (statePart = [], action) => {
@@ -31,6 +33,8 @@ const cardsReducer = (statePart = [], action) => {
           ? { ...card, isFavorite: !card.isFavorite }
           : card
       );
+    case REMOVE_CARD:
+      return statePart.filter((card) => card.id !== action.payload);
     default:
       return statePart;
   }
